@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sydney Schools Business Council</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #14213D;
+    --ink-soft: #3A4256;
+    --paper: #EFEEE6;
+    --paper-raised: #F7F6F0;
+    --line: rgba(20,33,61,0.14);
+    --teal: #1F6F5C;
+    --teal-deep: #14483B;
+    --brass: #B08D57;
+    --font-display: 'Newsreader', Georgia, serif;
+    --font-body: 'IBM Plex Sans', -apple-system, sans-serif;
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  html { scroll-padding-top: env(safe-area-inset-top, 0px); scroll-behavior: smooth; }
+  *, *::before, *::after { box-sizing: inherit; }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ink: #EDE9DD;
+      --ink-soft: #C3C2B8;
+      --paper: #14181C;
+      --paper-raised: #1B2025;
+      --line: rgba(237,233,221,0.14);
+      --teal: #4FA391;
+      --teal-deep: #7FC3B4;
+      --brass: #D3B679;
+    }
+  }
+  :root[data-theme="dark"] {
+    --ink: #EDE9DD;
+    --ink-soft: #C3C2B8;
+    --paper: #14181C;
+    --paper-raised: #1B2025;
+    --line: rgba(237,233,221,0.14);
+    --teal: #4FA391;
+    --teal-deep: #7FC3B4;
+    --brass: #D3B679;
+  }
+
+  html, body { height: 100%; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-body);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 56px); }
+
+  a { color: inherit; }
+
+  /* ---------- Header ---------- */
+  header {
+    position: sticky; top: 0; z-index: 20;
+    padding-top: env(safe-area-inset-top, 0px);
+    background: color-mix(in srgb, var(--paper) 88%, transparent);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-row {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 0;
+  }
+  .wordmark {
+    font-family: var(--font-display);
+    font-size: 1.28rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    display: flex; align-items: baseline; gap: 8px;
+  }
+  .wordmark .mark { color: var(--teal); }
+  nav.links { display: flex; gap: clamp(16px, 3vw, 30px); font-size: 0.92rem; }
+  nav.links a { text-decoration: none; color: var(--ink-soft); transition: color .15s; }
+  nav.links a:hover { color: var(--teal); }
+  .nav-cta {
+    border: 1px solid var(--ink);
+    padding: 8px 16px;
+    border-radius: 3px;
+    text-decoration: none;
+    font-size: 0.88rem;
+    white-space: nowrap;
+  }
+  .nav-cta:hover { background: var(--ink); color: var(--paper); }
+  .menu-btn { display: none; }
+
+  @media (max-width: 720px) {
+    nav.links { display: none; }
+    .menu-btn {
+      display: inline-block; background: none; border: 1px solid var(--line);
+      border-radius: 3px; padding: 8px 12px; color: var(--ink); font-size: .85rem;
+    }
+  }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    padding: clamp(56px, 10vw, 108px) 0 clamp(48px, 8vw, 80px);
+    border-bottom: 1px solid var(--line);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: clamp(32px, 5vw, 64px);
+    align-items: end;
+  }
+  @media (max-width: 860px) { .hero-grid { grid-template-columns: 1fr; } }
+
+  .kicker {
+    font-size: 0.86rem;
+    color: var(--teal);
+    font-weight: 500;
+    margin: 0 0 18px;
+  }
+  h1.headline {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: clamp(2.4rem, 5.2vw, 4rem);
+    line-height: 1.06;
+    letter-spacing: -0.015em;
+    margin: 0 0 26px;
+    max-width: 15ch;
+  }
+  h1.headline em { font-style: italic; color: var(--teal); }
+  .hero-sub {
+    font-size: clamp(1.02rem, 1.4vw, 1.18rem);
+    color: var(--ink-soft);
+    max-width: 46ch;
+    margin: 0 0 34px;
+  }
+  .cta-row { display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 13px 24px;
+    border-radius: 3px;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: transform .12s ease, background .15s;
+  }
+  .btn-primary { background: var(--ink); color: var(--paper); }
+  .btn-primary:hover { background: var(--teal-deep); transform: translateY(-1px); }
+  .btn-ghost { border: 1px solid var(--line); color: var(--ink); }
+  .btn-ghost:hover { border-color: var(--ink); }
+
+  .ledger-panel {
+    background: var(--paper-raised);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 28px 26px;
+  }
+  .ledger-panel .ledger-title {
+    font-size: 0.82rem;
+    color: var(--ink-soft);
+    margin: 0 0 16px;
+  }
+  .ledger-row {
+    display: flex; justify-content: space-between; align-items: baseline;
+    padding: 13px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .ledger-row:last-child { border-bottom: none; padding-bottom: 0; }
+  .ledger-row .label { font-size: 0.94rem; color: var(--ink-soft); }
+  .ledger-row .value { font-family: var(--font-display); font-size: 1.1rem; }
+
+  /* ---------- Section shared ---------- */
+  section { padding: clamp(56px, 9vw, 92px) 0; border-bottom: 1px solid var(--line); }
+  .section-head { display: grid; grid-template-columns: 1fr 1.4fr; gap: 32px; margin-bottom: 44px; }
+  @media (max-width: 780px) { .section-head { grid-template-columns: 1fr; gap: 14px; } }
+  .section-head h2 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: clamp(1.7rem, 3vw, 2.3rem);
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+  .section-head p { margin: 0; color: var(--ink-soft); font-size: 1.02rem; max-width: 52ch; }
+
+  /* ---------- Programs ---------- */
+  .programs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+  @media (max-width: 780px) { .programs { grid-template-columns: 1fr; } }
+  .program {
+    background: var(--paper);
+    padding: 30px 28px;
+  }
+  .program h3 {
+    font-family: var(--font-display);
+    font-size: 1.28rem;
+    font-weight: 500;
+    margin: 0 0 12px;
+  }
+  .program p { color: var(--ink-soft); font-size: 0.94rem; margin: 0; }
+  .program .tag { display: block; font-size: 0.78rem; color: var(--teal); margin-bottom: 10px; }
+
+  /* ---------- Competition feature ---------- */
+  .feature {
+    display: grid; grid-template-columns: 1fr 1fr; gap: clamp(30px, 5vw, 60px);
+    align-items: center;
+  }
+  @media (max-width: 860px) { .feature { grid-template-columns: 1fr; } }
+  .feature h2 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: clamp(1.7rem, 3.2vw, 2.4rem);
+    line-height: 1.14;
+    margin: 0 0 18px;
+  }
+  .feature p { color: var(--ink-soft); margin: 0 0 20px; }
+  .episode-list { list-style: none; margin: 0; padding: 0; }
+  .episode-list li {
+    display: grid; grid-template-columns: 34px 1fr; gap: 14px;
+    padding: 14px 0;
+    border-top: 1px solid var(--line);
+  }
+  .episode-list li:last-child { border-bottom: 1px solid var(--line); }
+  .episode-list .num { font-family: var(--font-display); color: var(--teal); font-size: 1.05rem; }
+  .episode-list .ep-title { font-weight: 500; font-size: 0.96rem; }
+  .episode-list .ep-desc { color: var(--ink-soft); font-size: 0.88rem; margin-top: 2px; }
+
+  .diagram-box {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: var(--paper-raised);
+    padding: 20px;
+  }
+
+  /* ---------- Partners ---------- */
+  .partner-row {
+    display: flex; flex-wrap: wrap; gap: 14px 40px; align-items: center;
+    padding-top: 6px;
+  }
+  .partner-name {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--ink-soft);
+    letter-spacing: -0.01em;
+  }
+  .partner-note { color: var(--ink-soft); font-size: 0.9rem; margin-top: 22px; max-width: 62ch; }
+
+  /* ---------- Schools ---------- */
+  .school-grid {
+    columns: 2 220px;
+    column-gap: 32px;
+  }
+  @media (max-width: 560px) { .school-grid { columns: 1; } }
+  .school-grid .school {
+    break-inside: avoid;
+    padding: 11px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 0.96rem;
+  }
+
+  /* ---------- Get involved ---------- */
+  .involve-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+  @media (max-width: 780px) { .involve-grid { grid-template-columns: 1fr; } }
+  .involve-card {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 26px 24px;
+  }
+  .involve-card h3 { font-family: var(--font-display); font-weight: 500; font-size: 1.12rem; margin: 0 0 10px; }
+  .involve-card p { color: var(--ink-soft); font-size: 0.92rem; margin: 0 0 18px; }
+  .involve-card a { font-size: 0.9rem; font-weight: 500; color: var(--teal); text-decoration: none; }
+  .involve-card a:hover { text-decoration: underline; }
+
+  /* ---------- Footer ---------- */
+  footer { padding: 40px 0 calc(40px + env(safe-area-inset-bottom, 0px)); }
+  .footer-row {
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;
+    font-size: 0.86rem; color: var(--ink-soft);
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav-row">
+    <div class="wordmark"><span class="mark">SSBC</span> · Sydney Schools Business Council</div>
+    <nav class="links">
+      <a href="#programs">Programs</a>
+      <a href="#competition">Competition</a>
+      <a href="#partners">Partners</a>
+      <a href="#schools">Schools</a>
+      <a href="#involved">Get involved</a>
+    </nav>
+    <a class="nav-cta" href="#involved">Partner with us</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="kicker">A student-led council for NSW secondary schools</p>
+      <h1 class="headline">Business and finance education, <em>run by the students who need it.</em></h1>
+      <p class="hero-sub">SSBC connects business societies across Sydney schools through a shared competition, a shared curriculum, and a shared network — built by students, for students, and judged by the industry they're preparing to enter.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#competition">See the 2027 competition</a>
+        <a class="btn btn-ghost" href="#involved">Become a partner</a>
+      </div>
+    </div>
+    <div class="ledger-panel">
+      <p class="ledger-title">The council, in brief</p>
+      <div class="ledger-row"><span class="label">Participating schools</span><span class="value">10+</span></div>
+      <div class="ledger-row"><span class="label">Founding format</span><span class="value">Case Competition</span></div>
+      <div class="ledger-row"><span class="label">Launch</span><span class="value">Term 1, 2027</span></div>
+      <div class="ledger-row"><span class="label">University backing</span><span class="value">UNSW · Macquarie</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="programs">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Three programs, one council</h2>
+      <p>Each existing school business society keeps its own identity. SSBC is the shared layer that connects them — a competition to compete in, a curriculum to learn from, and a network to belong to.</p>
+    </div>
+    <div class="programs">
+      <div class="program">
+        <span class="tag">Compete</span>
+        <h3>SSBC Competition</h3>
+        <p>An interschool business case competition, opening with an online qualifying round and closing with a live final judged by industry professionals.</p>
+      </div>
+      <div class="program">
+        <span class="tag">Learn</span>
+        <h3>SSBC Learn</h3>
+        <p>Short, self-paced resources students can finish in 10–20 minutes — how a business makes money, reading an income statement, debt versus equity, and market research fundamentals.</p>
+      </div>
+      <div class="program">
+        <span class="tag">Connect</span>
+        <h3>SSBC Network</h3>
+        <p>A council of member societies, each represented by one or two student delegates, coordinating events, speakers, and opportunities across schools.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="competition">
+  <div class="wrap feature">
+    <div>
+      <p class="kicker">2027 Sydney Interschool Business Case Competition</p>
+      <h2>A company that unfolds in real time, not a report due in three weeks.</h2>
+      <p>Teams of three to four students take over a fictional Australian infrastructure operator and steer it through four live episodes — no finance background assumed, no single right answer. Every team receives the same information at the same time.</p>
+      <p>Round 1 runs entirely online. Finalists present in person to a professional judging panel at the live final.</p>
+      <a class="btn btn-ghost" href="#involved">Register a school</a>
+    </div>
+    <div>
+      <div class="diagram-box">
+        <ol class="episode-list">
+          <li><span class="num">01</span><div><div class="ep-title">Growth</div><div class="ep-desc">Fund and price an expansion into a live infrastructure market.</div></div></li>
+          <li><span class="num">02</span><div><div class="ep-title">Competition</div><div class="ep-desc">A rival operator enters — the team has to respond.</div></div></li>
+          <li><span class="num">03</span><div><div class="ep-title">Shock</div><div class="ep-desc">An energy or regulatory shock tests the plan under pressure.</div></div></li>
+          <li><span class="num">04</span><div><div class="ep-title">Financing</div><div class="ep-desc">A debt-versus-equity call, closed out with a recorded pitch.</div></div></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="partners">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Backed by</h2>
+      <p>SSBC is developed with guidance and support from university partners, alongside professionals who review our case materials and judge the live final.</p>
+    </div>
+    <div class="partner-row">
+      <span class="partner-name">UNSW</span>
+      <span class="partner-name">Macquarie University</span>
+    </div>
+    <p class="partner-note">SSBC is seeking additional strategic partners for the 2027 competition — case review, judging, mentoring, and delivery support. See "Get involved" below.</p>
+  </div>
+</section>
+
+<section id="schools">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>The council</h2>
+      <p>SSBC is coordinated by student representatives from each member school's own business society.</p>
+    </div>
+    <div class="school-grid">
+      <div class="school">The King's School</div>
+      <div class="school">Sydney Grammar School</div>
+      <div class="school">Knox Grammar School</div>
+      <div class="school">Sydney Boys High School</div>
+      <div class="school">The Scots College</div>
+      <div class="school">Kambala</div>
+      <div class="school">MLC School</div>
+      <div class="school">Barker College</div>
+      <div class="school">St Catherine's School</div>
+      <div class="school">North Sydney Boys High School</div>
+      <div class="school">North Sydney Girls High School</div>
+    </div>
+  </div>
+</section>
+
+<section id="involved" style="border-bottom: none;">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Get involved</h2>
+      <p>SSBC is built by its member schools and grows through partnership. Here's where to start.</p>
+    </div>
+    <div class="involve-grid">
+      <div class="involve-card">
+        <h3>Schools</h3>
+        <p>Bring your school's business, finance, or investment society into the council and register teams for the 2027 competition.</p>
+        <a href="mailto:hello@ssbcouncil.org">Register your school &nbsp;→</a>
+      </div>
+      <div class="involve-card">
+        <h3>Sponsors &amp; partners</h3>
+        <p>Support case development, provide judges or mentors, or help fund delivery of a multi-school competition and final.</p>
+        <a href="mailto:hello@ssbcouncil.org">Start a partnership &nbsp;→</a>
+      </div>
+      <div class="involve-card">
+        <h3>Students</h3>
+        <p>Not part of a member society yet? Reach out — we'll connect you with your nearest school representative.</p>
+        <a href="mailto:hello@ssbcouncil.org">Get in touch &nbsp;→</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-row">
+    <span>Sydney Schools Business Council · ssbcouncil.org</span>
+    <span>Student-led. Adult-governed. NSW.</span>
+  </div>
+</footer>
+
+</body>
+</html>
