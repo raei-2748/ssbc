@@ -4,463 +4,41 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Sydney Schools Business Council</title>
+<meta name="description" content="SSBC connects business societies across Sydney schools through a shared competition, a shared curriculum, and a shared network.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --ink: #12131A;
-    --ink-soft: #565A6E;
-    --paper: #FFFCF6;
-    --paper-raised: #FFFFFF;
-    --line: rgba(18,19,26,0.10);
-    --teal: #0EA88F;
-    --teal-deep: #087363;
-    --coral: #FF5A5F;
-    --coral-deep: #E23F45;
-    --violet: #6C5CE7;
-    --violet-deep: #5140C4;
-    --sun: #FFC145;
-    --brass: #B08D57;
-    --grad-brand: linear-gradient(120deg, var(--coral) 0%, var(--violet) 55%, var(--teal) 100%);
-    --grad-warm: linear-gradient(120deg, var(--coral) 0%, var(--sun) 100%);
-    --radius: 18px;
-    --radius-sm: 12px;
-    --radius-pill: 999px;
-    --shadow-soft: 0 10px 30px -12px rgba(18,19,26,0.18);
-    --shadow-lift: 0 18px 40px -14px rgba(18,19,26,0.28);
-    --font-display: 'Newsreader', Georgia, serif;
-    --font-body: 'IBM Plex Sans', -apple-system, sans-serif;
-    box-sizing: border-box;
-    padding-top: env(safe-area-inset-top, 0px);
-    padding-bottom: env(safe-area-inset-bottom, 0px);
-  }
-  html { scroll-padding-top: env(safe-area-inset-top, 0px); scroll-behavior: smooth; }
-  *, *::before, *::after { box-sizing: inherit; }
-
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-      --ink: #F5F3EC;
-      --ink-soft: #C7C6BE;
-      --paper: #0B0D10;
-      --paper-raised: #15181C;
-      --line: rgba(245,243,236,0.14);
-      --teal: #2DD4BF;
-      --teal-deep: #5EEAD4;
-      --coral: #FF7A7E;
-      --coral-deep: #FF9A9D;
-      --violet: #9C8CFF;
-      --violet-deep: #B6ABFF;
-      --sun: #FFD166;
-      --brass: #D3B679;
-      --shadow-soft: 0 10px 30px -12px rgba(0,0,0,0.5);
-      --shadow-lift: 0 18px 40px -14px rgba(0,0,0,0.6);
-    }
-  }
-  :root[data-theme="dark"] {
-    --ink: #F5F3EC;
-    --ink-soft: #C7C6BE;
-    --paper: #0B0D10;
-    --paper-raised: #15181C;
-    --line: rgba(245,243,236,0.14);
-    --teal: #2DD4BF;
-    --teal-deep: #5EEAD4;
-    --coral: #FF7A7E;
-    --coral-deep: #FF9A9D;
-    --violet: #9C8CFF;
-    --violet-deep: #B6ABFF;
-    --sun: #FFD166;
-    --brass: #D3B679;
-    --shadow-soft: 0 10px 30px -12px rgba(0,0,0,0.5);
-    --shadow-lift: 0 18px 40px -14px rgba(0,0,0,0.6);
-  }
-
-  html, body { height: 100%; }
-  body {
-    margin: 0;
-    background: var(--paper);
-    color: var(--ink);
-    font-family: var(--font-body);
-    line-height: 1.55;
-    -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;
-  }
-
-  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 56px); position: relative; }
-
-  a { color: inherit; }
-
-  ::selection { background: var(--sun); color: var(--ink); }
-
-  /* ---------- Scroll reveal ---------- */
-  .reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1); }
-  .reveal.in-view { opacity: 1; transform: translateY(0); }
-  @media (prefers-reduced-motion: reduce) {
-    .reveal { opacity: 1; transform: none; transition: none; }
-    * { animation: none !important; }
-  }
-
-  /* ---------- Header ---------- */
-  header {
-    position: sticky; top: 0; z-index: 20;
-    padding-top: env(safe-area-inset-top, 0px);
-    background: color-mix(in srgb, var(--paper) 82%, transparent);
-    backdrop-filter: blur(14px);
-    border-bottom: 1px solid var(--line);
-  }
-  header::before {
-    content: ""; position: absolute; inset: 0 0 auto 0; height: 3px;
-    background: var(--grad-brand); background-size: 200% 100%;
-    animation: shimmer 8s linear infinite;
-  }
-  @keyframes shimmer { to { background-position: 200% 0; } }
-  .nav-row {
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 18px 0;
-  }
-  .wordmark {
-    font-family: var(--font-display);
-    font-size: 1.32rem;
-    font-weight: 700;
-    letter-spacing: -0.01em;
-    display: flex; align-items: baseline; gap: 8px;
-  }
-  .wordmark .mark {
-    background: var(--grad-brand);
-    background-size: 200% 100%;
-    -webkit-background-clip: text; background-clip: text; color: transparent;
-    animation: shimmer 8s linear infinite;
-  }
-  nav.links { display: flex; gap: clamp(16px, 3vw, 30px); font-size: 0.92rem; }
-  nav.links a { text-decoration: none; color: var(--ink-soft); font-weight: 500; transition: color .15s; position: relative; }
-  nav.links a::after {
-    content: ""; position: absolute; left: 0; right: 100%; bottom: -4px; height: 2px;
-    background: var(--coral); border-radius: 2px; transition: right .2s ease;
-  }
-  nav.links a:hover { color: var(--ink); }
-  nav.links a:hover::after { right: 0; }
-  .nav-cta {
-    background: var(--ink);
-    color: var(--paper);
-    padding: 9px 20px;
-    border-radius: var(--radius-pill);
-    text-decoration: none;
-    font-size: 0.88rem;
-    font-weight: 600;
-    white-space: nowrap;
-    transition: transform .15s ease, box-shadow .15s ease, background .2s ease;
-  }
-  .nav-cta:hover { background: var(--grad-brand); transform: translateY(-2px); box-shadow: var(--shadow-soft); }
-  .menu-btn { display: none; }
-
-  @media (max-width: 720px) {
-    nav.links { display: none; }
-    .menu-btn {
-      display: inline-block; background: none; border: 1px solid var(--line);
-      border-radius: var(--radius-sm); padding: 8px 12px; color: var(--ink); font-size: .85rem;
-    }
-  }
-
-  /* ---------- Hero ---------- */
-  .hero {
-    padding: clamp(64px, 11vw, 116px) 0 clamp(56px, 9vw, 92px);
-    border-bottom: 1px solid var(--line);
-    position: relative;
-    overflow: hidden;
-  }
-  .blob {
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(60px);
-    opacity: 0.5;
-    z-index: 0;
-    animation: float 14s ease-in-out infinite;
-  }
-  .blob-1 { width: 340px; height: 340px; top: -120px; right: -80px; background: var(--coral); animation-delay: 0s; }
-  .blob-2 { width: 280px; height: 280px; bottom: -140px; left: -60px; background: var(--violet); animation-delay: -5s; }
-  .blob-3 { width: 200px; height: 200px; top: 30%; right: 18%; background: var(--sun); opacity: 0.35; animation-delay: -9s; }
-  @keyframes float {
-    0%, 100% { transform: translate(0, 0) scale(1); }
-    33% { transform: translate(18px, -24px) scale(1.06); }
-    66% { transform: translate(-14px, 16px) scale(0.96); }
-  }
-  .hero-grid {
-    display: grid;
-    grid-template-columns: 1.15fr 0.85fr;
-    gap: clamp(32px, 5vw, 64px);
-    align-items: end;
-    position: relative;
-    z-index: 1;
-  }
-  @media (max-width: 860px) { .hero-grid { grid-template-columns: 1fr; } }
-
-  .kicker {
-    display: inline-flex; align-items: center; gap: 8px;
-    font-size: 0.84rem;
-    color: var(--coral-deep);
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-    margin: 0 0 18px;
-    padding: 5px 12px;
-    background: color-mix(in srgb, var(--coral) 14%, transparent);
-    border-radius: var(--radius-pill);
-  }
-  h1.headline {
-    font-family: var(--font-display);
-    font-weight: 600;
-    font-size: clamp(2.5rem, 5.4vw, 4.2rem);
-    line-height: 1.05;
-    letter-spacing: -0.02em;
-    margin: 0 0 26px;
-    max-width: 15ch;
-  }
-  h1.headline em {
-    font-style: italic;
-    background: var(--grad-brand);
-    background-size: 200% 100%;
-    -webkit-background-clip: text; background-clip: text; color: transparent;
-    animation: shimmer 8s linear infinite;
-  }
-  .hero-sub {
-    font-size: clamp(1.04rem, 1.4vw, 1.2rem);
-    color: var(--ink-soft);
-    max-width: 46ch;
-    margin: 0 0 34px;
-  }
-  .cta-row { display: flex; gap: 14px; flex-wrap: wrap; }
-  .btn {
-    display: inline-flex; align-items: center; gap: 8px;
-    padding: 14px 26px;
-    border-radius: var(--radius-pill);
-    text-decoration: none;
-    font-size: 0.95rem;
-    font-weight: 600;
-    transition: transform .15s ease, box-shadow .2s ease, background .2s ease, color .2s ease, border-color .2s ease;
-  }
-  .btn-primary { background: var(--grad-brand); background-size: 200% 100%; color: #fff; box-shadow: var(--shadow-soft); }
-  .btn-primary:hover { transform: translateY(-2px); box-shadow: var(--shadow-lift); background-position: 100% 0; }
-  .btn-ghost { border: 2px solid var(--ink); color: var(--ink); }
-  .btn-ghost:hover { border-color: var(--violet); color: var(--violet); transform: translateY(-2px); }
-
-  .ledger-panel {
-    background: var(--paper-raised);
-    border: 1px solid var(--line);
-    border-radius: var(--radius);
-    padding: 30px 28px;
-    box-shadow: var(--shadow-soft);
-    position: relative;
-    overflow: hidden;
-  }
-  .ledger-panel::before {
-    content: ""; position: absolute; top: 0; left: 0; right: 0; height: 5px;
-    background: var(--grad-brand);
-  }
-  .ledger-panel .ledger-title {
-    font-size: 0.82rem;
-    font-weight: 600;
-    color: var(--ink-soft);
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-    margin: 10px 0 16px;
-  }
-  .ledger-row {
-    display: flex; justify-content: space-between; align-items: baseline;
-    padding: 13px 0;
-    border-bottom: 1px solid var(--line);
-  }
-  .ledger-row:last-child { border-bottom: none; padding-bottom: 0; }
-  .ledger-row .label { font-size: 0.94rem; color: var(--ink-soft); }
-  .ledger-row .value { font-family: var(--font-display); font-weight: 600; font-size: 1.14rem; color: var(--teal-deep); }
-
-  /* ---------- Section shared ---------- */
-  section { padding: clamp(60px, 9vw, 100px) 0; border-bottom: 1px solid var(--line); }
-  .section-head { display: grid; grid-template-columns: 1fr 1.4fr; gap: 32px; margin-bottom: 46px; }
-  @media (max-width: 780px) { .section-head { grid-template-columns: 1fr; gap: 14px; } }
-  .section-head h2 {
-    font-family: var(--font-display);
-    font-weight: 600;
-    font-size: clamp(1.8rem, 3.2vw, 2.5rem);
-    margin: 0;
-    letter-spacing: -0.015em;
-  }
-  .section-head p { margin: 0; color: var(--ink-soft); font-size: 1.03rem; max-width: 52ch; }
-
-  /* ---------- Programs ---------- */
-  .programs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-  @media (max-width: 780px) { .programs { grid-template-columns: 1fr; } }
-  .program {
-    background: var(--paper-raised);
-    border: 1px solid var(--line);
-    border-radius: var(--radius);
-    padding: 32px 28px;
-    border-top: 4px solid var(--accent, var(--teal));
-    transition: transform .2s ease, box-shadow .2s ease;
-  }
-  .program:hover { transform: translateY(-6px); box-shadow: var(--shadow-lift); }
-  .program:nth-child(1) { --accent: var(--coral); }
-  .program:nth-child(2) { --accent: var(--violet); }
-  .program:nth-child(3) { --accent: var(--teal); }
-  .program h3 {
-    font-family: var(--font-display);
-    font-size: 1.32rem;
-    font-weight: 600;
-    margin: 0 0 12px;
-  }
-  .program p { color: var(--ink-soft); font-size: 0.95rem; margin: 0; }
-  .program .tag {
-    display: inline-block; font-size: 0.76rem; font-weight: 700;
-    text-transform: uppercase; letter-spacing: 0.05em;
-    color: #fff; background: var(--accent, var(--teal));
-    padding: 4px 11px; border-radius: var(--radius-pill);
-    margin-bottom: 14px;
-  }
-
-  /* ---------- Competition feature ---------- */
-  .feature {
-    display: grid; grid-template-columns: 1fr 1fr; gap: clamp(30px, 5vw, 60px);
-    align-items: center;
-  }
-  @media (max-width: 860px) { .feature { grid-template-columns: 1fr; } }
-  .feature h2 {
-    font-family: var(--font-display);
-    font-weight: 600;
-    font-size: clamp(1.8rem, 3.4vw, 2.5rem);
-    line-height: 1.14;
-    margin: 0 0 18px;
-  }
-  .feature p { color: var(--ink-soft); margin: 0 0 20px; }
-  .episode-list { list-style: none; margin: 0; padding: 0; }
-  .episode-list li {
-    display: grid; grid-template-columns: 40px 1fr; gap: 14px;
-    padding: 15px 0;
-    border-top: 1px solid var(--line);
-  }
-  .episode-list li:last-child { border-bottom: 1px solid var(--line); }
-  .episode-list .num {
-    display: flex; align-items: center; justify-content: center;
-    width: 34px; height: 34px; border-radius: 50%;
-    background: var(--grad-brand); background-size: 250% 100%;
-    color: #fff; font-family: var(--font-display); font-weight: 600; font-size: 0.98rem;
-  }
-  .episode-list li:nth-child(1) .num { background-position: 0% 0; }
-  .episode-list li:nth-child(2) .num { background-position: 40% 0; }
-  .episode-list li:nth-child(3) .num { background-position: 70% 0; }
-  .episode-list li:nth-child(4) .num { background-position: 100% 0; }
-  .episode-list .ep-title { font-weight: 600; font-size: 0.98rem; }
-  .episode-list .ep-desc { color: var(--ink-soft); font-size: 0.89rem; margin-top: 2px; }
-
-  .diagram-box {
-    border: 1px solid var(--line);
-    border-radius: var(--radius);
-    background: var(--paper-raised);
-    padding: 22px 22px 18px;
-    box-shadow: var(--shadow-soft);
-  }
-
-  /* ---------- Partners ---------- */
-  .partner-row {
-    display: flex; flex-wrap: wrap; gap: 16px 40px; align-items: center;
-    padding-top: 6px;
-  }
-  .partner-name {
-    font-family: var(--font-display);
-    font-size: 1.55rem;
-    font-weight: 600;
-    color: var(--ink);
-    letter-spacing: -0.01em;
-    padding-bottom: 4px;
-    border-bottom: 3px solid var(--sun);
-    transition: border-color .2s ease, color .2s ease;
-  }
-  .partner-name:hover { border-color: var(--coral); color: var(--coral-deep); }
-  .partner-note { color: var(--ink-soft); font-size: 0.92rem; margin-top: 24px; max-width: 62ch; }
-
-  /* ---------- Schools ---------- */
-  .school-grid {
-    columns: 2 220px;
-    column-gap: 32px;
-  }
-  @media (max-width: 560px) { .school-grid { columns: 1; } }
-  .school-grid .school {
-    break-inside: avoid;
-    padding: 12px 0 12px 20px;
-    border-bottom: 1px solid var(--line);
-    font-size: 0.97rem;
-    position: relative;
-  }
-  .school-grid .school::before {
-    content: ""; position: absolute; left: 0; top: 50%; transform: translateY(-50%);
-    width: 8px; height: 8px; border-radius: 50%;
-    background: var(--teal);
-  }
-  .school-grid .school:nth-child(3n+1)::before { background: var(--coral); }
-  .school-grid .school:nth-child(3n+2)::before { background: var(--violet); }
-
-  /* ---------- Get involved ---------- */
-  .involve-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-  @media (max-width: 780px) { .involve-grid { grid-template-columns: 1fr; } }
-  .involve-card {
-    background: var(--paper-raised);
-    border: 1px solid var(--line);
-    border-radius: var(--radius);
-    padding: 28px 26px;
-    transition: transform .2s ease, box-shadow .2s ease;
-  }
-  .involve-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lift); }
-  .involve-card h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.14rem; margin: 0 0 10px; }
-  .involve-card p { color: var(--ink-soft); font-size: 0.93rem; margin: 0 0 18px; }
-  .involve-card a {
-    display: inline-flex; align-items: center; gap: 6px;
-    font-size: 0.9rem; font-weight: 700; color: var(--coral-deep); text-decoration: none;
-    transition: gap .15s ease, color .15s ease;
-  }
-  .involve-card a:hover { gap: 10px; color: var(--violet-deep); }
-  .involve-card:nth-child(1) h3 { color: var(--coral-deep); }
-  .involve-card:nth-child(2) h3 { color: var(--violet-deep); }
-  .involve-card:nth-child(3) h3 { color: var(--teal-deep); }
-
-  /* ---------- Footer ---------- */
-  footer { padding: 44px 0 calc(44px + env(safe-area-inset-bottom, 0px)); position: relative; }
-  footer::before {
-    content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px;
-    background: var(--grad-brand);
-  }
-  .footer-row {
-    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;
-    font-size: 0.86rem; color: var(--ink-soft);
-  }
-</style>
+<link rel="stylesheet" href="/assets/styles.css">
 </head>
-<body>
-
-<div class="blob blob-1"></div>
-<div class="blob blob-2"></div>
+<body data-page="home">
 
 <header>
   <div class="wrap nav-row">
-    <div class="wordmark"><span class="mark">SSBC</span> · Sydney Schools Business Council</div>
+    <a class="wordmark" href="/"><span class="mark">SSBC</span> · Sydney Schools Business Council</a>
     <nav class="links">
-      <a href="#programs">Programs</a>
-      <a href="#competition">Competition</a>
-      <a href="#partners">Partners</a>
-      <a href="#schools">Schools</a>
-      <a href="#involved">Get involved</a>
+      <a href="/" data-page="home">Home</a>
+      <a href="/competition.html" data-page="competition">Competition</a>
+      <a href="/programs.html" data-page="programs">Programs</a>
+      <a href="/partners.html" data-page="partners">Partners</a>
+      <a href="/get-involved.html" data-page="get-involved">Get involved</a>
+      <a class="nav-cta drawer-cta" href="/get-involved.html">Partner with us</a>
     </nav>
-    <a class="nav-cta" href="#involved">Partner with us</a>
+    <a class="nav-cta" href="/get-involved.html">Partner with us</a>
+    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+    </button>
   </div>
 </header>
 
 <section class="hero">
-  <div class="blob blob-3"></div>
   <div class="wrap hero-grid">
     <div>
       <p class="kicker">A student-led council for NSW secondary schools</p>
       <h1 class="headline">Business and finance education, <em>run by the students who need it.</em></h1>
       <p class="hero-sub">SSBC connects business societies across Sydney schools through a shared competition, a shared curriculum, and a shared network — built by students, for students, and judged by the industry they're preparing to enter.</p>
       <div class="cta-row">
-        <a class="btn btn-primary" href="#competition">See the 2027 competition</a>
-        <a class="btn btn-ghost" href="#involved">Become a partner</a>
+        <a class="btn btn-primary" href="/competition.html">See the 2027 competition</a>
+        <a class="btn btn-ghost" href="/get-involved.html">Become a partner</a>
       </div>
     </div>
     <div class="ledger-panel">
@@ -473,6 +51,17 @@
   </div>
 </section>
 
+<section class="tight" style="border-bottom: none; padding-bottom: 0;">
+  <div class="wrap">
+    <div class="stats-strip reveal">
+      <div class="stat"><div class="num">10+</div><div class="label">Member schools</div></div>
+      <div class="stat"><div class="num">20+</div><div class="label">Student delegates</div></div>
+      <div class="stat"><div class="num">4</div><div class="label">Live competition episodes</div></div>
+      <div class="stat"><div class="num">2</div><div class="label">University partners</div></div>
+    </div>
+  </div>
+</section>
+
 <section id="programs">
   <div class="wrap">
     <div class="section-head reveal">
@@ -481,19 +70,25 @@
     </div>
     <div class="programs">
       <div class="program reveal">
+        <div class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8M12 17v4M7 4h10v4a5 5 0 0 1-10 0V4Z"/><path d="M7 6H4a2 2 0 0 0 2 4M17 6h3a2 2 0 0 1-2 4"/></svg></div>
         <span class="tag">Compete</span>
         <h3>SSBC Competition</h3>
         <p>An interschool business case competition, opening with an online qualifying round and closing with a live final judged by industry professionals.</p>
+        <a class="more" href="/competition.html">Explore the competition →</a>
       </div>
       <div class="program reveal">
+        <div class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H12v18H6.5A2.5 2.5 0 0 1 4 18.5v-13Z"/><path d="M20 5.5A2.5 2.5 0 0 0 17.5 3H12v18h5.5a2.5 2.5 0 0 0 2.5-2.5v-13Z"/></svg></div>
         <span class="tag">Learn</span>
         <h3>SSBC Learn</h3>
         <p>Short, self-paced resources students can finish in 10–20 minutes — how a business makes money, reading an income statement, debt versus equity, and market research fundamentals.</p>
+        <a class="more" href="/programs.html">Explore the curriculum →</a>
       </div>
       <div class="program reveal">
+        <div class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20v-1a5 5 0 0 1 10 0v1M14.5 20v-1a4 4 0 0 1 6.5-3.2"/></svg></div>
         <span class="tag">Connect</span>
         <h3>SSBC Network</h3>
         <p>A council of member societies, each represented by one or two student delegates, coordinating events, speakers, and opportunities across schools.</p>
+        <a class="more" href="/programs.html">Explore the network →</a>
       </div>
     </div>
   </div>
@@ -502,19 +97,19 @@
 <section id="competition">
   <div class="wrap feature">
     <div class="reveal">
-      <p class="kicker">2027 Sydney Interschool Business Case Competition</p>
+      <p class="kicker tone-violet">2027 Sydney Interschool Business Case Competition</p>
       <h2>A company that unfolds in real time, not a report due in three weeks.</h2>
       <p>Teams of three to four students take over a fictional Australian infrastructure operator and steer it through four live episodes — no finance background assumed, no single right answer. Every team receives the same information at the same time.</p>
       <p>Round 1 runs entirely online. Finalists present in person to a professional judging panel at the live final.</p>
-      <a class="btn btn-ghost" href="#involved">Register a school</a>
+      <a class="btn btn-ghost" href="/competition.html">See the full competition guide</a>
     </div>
     <div class="reveal">
       <div class="diagram-box">
-        <ol class="episode-list">
-          <li><span class="num">01</span><div><div class="ep-title">Growth</div><div class="ep-desc">Fund and price an expansion into a live infrastructure market.</div></div></li>
-          <li><span class="num">02</span><div><div class="ep-title">Competition</div><div class="ep-desc">A rival operator enters — the team has to respond.</div></div></li>
-          <li><span class="num">03</span><div><div class="ep-title">Shock</div><div class="ep-desc">An energy or regulatory shock tests the plan under pressure.</div></div></li>
-          <li><span class="num">04</span><div><div class="ep-title">Financing</div><div class="ep-desc">A debt-versus-equity call, closed out with a recorded pitch.</div></div></li>
+        <ol class="episode-list" style="list-style:none;margin:0;padding:0;">
+          <li style="display:grid;grid-template-columns:40px 1fr;gap:14px;padding:15px 0;border-top:1px solid var(--line);"><span style="display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:var(--coral);color:#fff;font-family:var(--font-display);font-weight:600;">01</span><div><div style="font-weight:600;font-size:.98rem;">Growth</div><div style="color:var(--ink-soft);font-size:.89rem;margin-top:2px;">Fund and price an expansion into a live infrastructure market.</div></div></li>
+          <li style="display:grid;grid-template-columns:40px 1fr;gap:14px;padding:15px 0;border-top:1px solid var(--line);"><span style="display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:var(--violet);color:#fff;font-family:var(--font-display);font-weight:600;">02</span><div><div style="font-weight:600;font-size:.98rem;">Competition</div><div style="color:var(--ink-soft);font-size:.89rem;margin-top:2px;">A rival operator enters — the team has to respond.</div></div></li>
+          <li style="display:grid;grid-template-columns:40px 1fr;gap:14px;padding:15px 0;border-top:1px solid var(--line);"><span style="display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:var(--sun);color:#3a2a00;font-family:var(--font-display);font-weight:600;">03</span><div><div style="font-weight:600;font-size:.98rem;">Shock</div><div style="color:var(--ink-soft);font-size:.89rem;margin-top:2px;">An energy or regulatory shock tests the plan under pressure.</div></div></li>
+          <li style="display:grid;grid-template-columns:40px 1fr;gap:14px;padding:15px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);"><span style="display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:var(--teal);color:#fff;font-family:var(--font-display);font-weight:600;">04</span><div><div style="font-weight:600;font-size:.98rem;">Financing</div><div style="color:var(--ink-soft);font-size:.89rem;margin-top:2px;">A debt-versus-equity call, closed out with a recorded pitch.</div></div></li>
         </ol>
       </div>
     </div>
@@ -531,80 +126,58 @@
       <span class="partner-name">UNSW</span>
       <span class="partner-name">Macquarie University</span>
     </div>
-    <p class="partner-note">SSBC is seeking additional strategic partners for the 2027 competition — case review, judging, mentoring, and delivery support. See "Get involved" below.</p>
+    <p class="partner-note">SSBC is seeking additional strategic partners for the 2027 competition — case review, judging, mentoring, and delivery support. <a href="/partners.html" style="color:var(--coral-deep);font-weight:600;text-decoration:none;">See partnership tiers →</a></p>
   </div>
 </section>
 
-<section id="schools">
+<section style="border-bottom: none;">
   <div class="wrap">
-    <div class="section-head reveal">
-      <h2>The council</h2>
-      <p>SSBC is coordinated by student representatives from each member school's own business society.</p>
-    </div>
-    <div class="school-grid reveal">
-      <div class="school">The King's School</div>
-      <div class="school">Sydney Grammar School</div>
-      <div class="school">Knox Grammar School</div>
-      <div class="school">Sydney Boys High School</div>
-      <div class="school">The Scots College</div>
-      <div class="school">Kambala</div>
-      <div class="school">MLC School</div>
-      <div class="school">Barker College</div>
-      <div class="school">St Catherine's School</div>
-      <div class="school">North Sydney Boys High School</div>
-      <div class="school">North Sydney Girls High School</div>
-    </div>
-  </div>
-</section>
-
-<section id="involved" style="border-bottom: none;">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <h2>Get involved</h2>
-      <p>SSBC is built by its member schools and grows through partnership. Here's where to start.</p>
-    </div>
-    <div class="involve-grid">
-      <div class="involve-card reveal">
-        <h3>Schools</h3>
-        <p>Bring your school's business, finance, or investment society into the council and register teams for the 2027 competition.</p>
-        <a href="mailto:hello@ssbcouncil.org">Register your school &nbsp;→</a>
+    <div class="cta-banner reveal">
+      <div>
+        <h2>Ready to bring SSBC to your school?</h2>
+        <p>Register a school, start a partnership, or find your nearest student delegate — get in touch and we'll take it from there.</p>
       </div>
-      <div class="involve-card reveal">
-        <h3>Sponsors &amp; partners</h3>
-        <p>Support case development, provide judges or mentors, or help fund delivery of a multi-school competition and final.</p>
-        <a href="mailto:hello@ssbcouncil.org">Start a partnership &nbsp;→</a>
-      </div>
-      <div class="involve-card reveal">
-        <h3>Students</h3>
-        <p>Not part of a member society yet? Reach out — we'll connect you with your nearest school representative.</p>
-        <a href="mailto:hello@ssbcouncil.org">Get in touch &nbsp;→</a>
-      </div>
+      <a class="btn btn-primary" href="/get-involved.html">Get involved</a>
     </div>
   </div>
 </section>
 
 <footer>
-  <div class="wrap footer-row">
-    <span>Sydney Schools Business Council · ssbcouncil.org</span>
-    <span>Student-led. Adult-governed. NSW.</span>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="wordmark" style="margin-bottom:10px;"><span class="mark">SSBC</span></div>
+        <p style="color:var(--ink-soft);font-size:0.88rem;max-width:36ch;margin:0;">Sydney Schools Business Council — student-led, adult-governed, built for NSW secondary schools.</p>
+      </div>
+      <div>
+        <h5>Explore</h5>
+        <ul>
+          <li><a href="/competition.html">Competition</a></li>
+          <li><a href="/programs.html">Programs</a></li>
+          <li><a href="/partners.html">Partners</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Council</h5>
+        <ul>
+          <li><a href="/partners.html#schools">Member schools</a></li>
+          <li><a href="/get-involved.html">Get involved</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="mailto:hello@ssbcouncil.org">hello@ssbcouncil.org</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-row">
+      <span>Sydney Schools Business Council · ssbcouncil.org</span>
+      <span>Student-led. Adult-governed. NSW.</span>
+    </div>
   </div>
 </footer>
 
-<script>
-  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window) {
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('in-view');
-          io.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
-    document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
-  } else {
-    document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('in-view'); });
-  }
-</script>
-
+<script src="/assets/app.js"></script>
 </body>
 </html>
