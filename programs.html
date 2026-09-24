@@ -2,37 +2,43 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="theme-color" content="#0F766E">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Programs — Sydney Schools Business Council</title>
 <meta name="description" content="SSBC Learn and SSBC Network: self-paced curriculum and the delegate network that connects member schools.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/styles.css">
 </head>
 <body data-page="programs">
 
-<header>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
   <div class="wrap nav-row">
-    <a class="wordmark" href="/"><span class="mark">SSBC</span> · Sydney Schools Business Council</a>
-    <nav class="links">
+    <a class="wordmark" href="/" aria-label="SSBC, Sydney Schools Business Council, home"><span class="mark">SSBC</span><span class="full">Sydney Schools Business Council</span></a>
+    <nav class="links" id="site-nav" aria-label="Main">
       <a href="/" data-page="home">Home</a>
       <a href="/competition.html" data-page="competition">Competition</a>
       <a href="/programs.html" data-page="programs">Programs</a>
       <a href="/partners.html" data-page="partners">Partners</a>
       <a href="/get-involved.html" data-page="get-involved">Get involved</a>
-      <a class="nav-cta drawer-cta" href="/get-involved.html">Partner with us</a>
+      <a class="btn btn-primary drawer-cta" href="/get-involved.html">Partner with us</a>
     </nav>
-    <a class="nav-cta" href="/get-involved.html">Partner with us</a>
-    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+    <a class="btn btn-primary btn-sm nav-cta" href="/get-involved.html">Partner with us</a>
+    <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+      <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+      <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
     </button>
   </div>
 </header>
 
+<main id="main">
+
 <section class="page-hero">
   <div class="wrap">
-    <p class="crumb"><a href="/">Home</a> / Programs</p>
+    <nav class="crumb" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li aria-current="page">Programs</li></ol></nav>
     <p class="kicker tone-teal">Beyond the competition</p>
     <h1>Two ways to grow, whether or not your team is competing this term.</h1>
     <p class="lede">SSBC Learn gives every student a fast, self-paced way into business fundamentals. SSBC Network keeps member schools coordinated year-round — not just during competition season.</p>
@@ -46,47 +52,47 @@
       <p>Short, self-paced modules students can finish between classes — no textbook, no prerequisite. Each one stands alone, so students can start wherever is most useful.</p>
     </div>
     <div class="programs reveal">
-      <div class="program" style="--accent:var(--coral);">
+      <div class="program accent-coral">
         <span class="tag">Module 1</span>
         <h3>How a business makes money</h3>
         <p>Revenue, costs, and margin — the three numbers behind every business decision, explained with a real small-business example.</p>
-        <span style="font-size:.8rem;color:var(--ink-faint);font-weight:600;">≈ 12 minutes</span>
+        <span class="meta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> About 12 minutes</span>
       </div>
-      <div class="program" style="--accent:var(--violet);">
+      <div class="program accent-violet">
         <span class="tag">Module 2</span>
         <h3>Reading an income statement</h3>
         <p>What revenue, expenses, and net profit actually tell you — and the two questions to ask before trusting a number.</p>
-        <span style="font-size:.8rem;color:var(--ink-faint);font-weight:600;">≈ 15 minutes</span>
+        <span class="meta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> About 15 minutes</span>
       </div>
-      <div class="program" style="--accent:var(--teal);">
+      <div class="program accent-teal">
         <span class="tag">Module 3</span>
         <h3>Debt versus equity</h3>
         <p>Two ways to fund growth, and why the choice between them shapes every decision a company makes afterward.</p>
-        <span style="font-size:.8rem;color:var(--ink-faint);font-weight:600;">≈ 14 minutes</span>
+        <span class="meta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> About 14 minutes</span>
       </div>
-      <div class="program" style="--accent:var(--sun);">
+      <div class="program accent-amber">
         <span class="tag">Module 4</span>
         <h3>Market research fundamentals</h3>
         <p>How to test whether an idea has demand before spending a dollar building it.</p>
-        <span style="font-size:.8rem;color:var(--ink-faint);font-weight:600;">≈ 10 minutes</span>
+        <span class="meta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> About 10 minutes</span>
       </div>
-      <div class="program" style="--accent:var(--coral);">
+      <div class="program accent-coral">
         <span class="tag">Module 5</span>
         <h3>Valuation, roughly</h3>
         <p>A back-of-envelope way to estimate what a company might be worth, and why analysts rarely agree on it.</p>
-        <span style="font-size:.8rem;color:var(--ink-faint);font-weight:600;">≈ 16 minutes</span>
+        <span class="meta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> About 16 minutes</span>
       </div>
-      <div class="program" style="--accent:var(--violet);">
+      <div class="program accent-violet">
         <span class="tag">Module 6</span>
         <h3>Pitching a decision</h3>
         <p>Structuring a recommendation so a busy judge — or a busy investor — understands it in the first thirty seconds.</p>
-        <span style="font-size:.8rem;color:var(--ink-faint);font-weight:600;">≈ 11 minutes</span>
+        <span class="meta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> About 11 minutes</span>
       </div>
     </div>
   </div>
 </section>
 
-<section>
+<section class="alt">
   <div class="wrap feature">
     <div class="reveal">
       <p class="kicker tone-violet">Council structure</p>
@@ -95,25 +101,16 @@
       <p>The network exists year-round — it's how member schools stay connected between competition seasons, and how new schools get folded into the council.</p>
     </div>
     <div class="reveal diagram-box">
-      <div style="display:flex;flex-direction:column;gap:16px;">
-        <div style="display:flex;gap:14px;align-items:flex-start;">
-          <div class="icon-circle" style="margin-bottom:0;flex-shrink:0;--accent:var(--coral);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3"/><path d="M5 20a7 7 0 0 1 14 0"/></svg></div>
-          <div><div style="font-weight:600;">Delegates</div><div style="color:var(--ink-soft);font-size:.9rem;">One to two students per member school, elected by their own society.</div></div>
-        </div>
-        <div style="display:flex;gap:14px;align-items:flex-start;">
-          <div class="icon-circle" style="margin-bottom:0;flex-shrink:0;--accent:var(--violet);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v3M16 3v3"/></svg></div>
-          <div><div style="font-weight:600;">Termly meetups</div><div style="color:var(--ink-soft);font-size:.9rem;">Council-wide sessions to plan events and share what's working.</div></div>
-        </div>
-        <div style="display:flex;gap:14px;align-items:flex-start;">
-          <div class="icon-circle" style="margin-bottom:0;flex-shrink:0;--accent:var(--teal);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M5 8h14M5 16h14"/></svg></div>
-          <div><div style="font-weight:600;">Shared opportunities board</div><div style="color:var(--ink-soft);font-size:.9rem;">Speaker sessions, mentoring, and internship leads posted across the whole council.</div></div>
-        </div>
-      </div>
+      <ul class="icon-list">
+        <li class="accent-coral"><div class="icon-circle"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3"/><path d="M5 20a7 7 0 0 1 14 0"/></svg></div><div><div class="t">Delegates</div><div class="d">One to two students per member school, elected by their own society.</div></div></li>
+        <li class="accent-violet"><div class="icon-circle"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v3M16 3v3"/></svg></div><div><div class="t">Termly meetups</div><div class="d">Council-wide sessions to plan events and share what's working.</div></div></li>
+        <li class="accent-teal"><div class="icon-circle"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M5 8h14M5 16h14"/></svg></div><div><div class="t">Shared opportunities board</div><div class="d">Speaker sessions, mentoring, and internship leads posted across the whole council.</div></div></li>
+      </ul>
     </div>
   </div>
 </section>
 
-<section style="border-bottom: none;">
+<section>
   <div class="wrap">
     <div class="cta-banner reveal">
       <div>
@@ -125,37 +122,39 @@
   </div>
 </section>
 
+</main>
+
 <footer>
   <div class="wrap">
     <div class="footer-grid">
       <div>
-        <div class="wordmark" style="margin-bottom:10px;"><span class="mark">SSBC</span></div>
-        <p style="color:var(--ink-soft);font-size:0.88rem;max-width:36ch;margin:0;">Sydney Schools Business Council — student-led, adult-governed, built for NSW secondary schools.</p>
+        <a class="wordmark" href="/"><span class="mark">SSBC</span><span class="full">Sydney Schools Business Council</span></a>
+        <p class="about">Student-led, adult-governed, and built for NSW secondary schools.</p>
       </div>
-      <div>
-        <h5>Explore</h5>
+      <nav aria-label="Explore">
+        <h2>Explore</h2>
         <ul>
           <li><a href="/competition.html">Competition</a></li>
           <li><a href="/programs.html">Programs</a></li>
           <li><a href="/partners.html">Partners</a></li>
         </ul>
-      </div>
-      <div>
-        <h5>Council</h5>
+      </nav>
+      <nav aria-label="Council">
+        <h2>Council</h2>
         <ul>
           <li><a href="/partners.html#schools">Member schools</a></li>
           <li><a href="/get-involved.html">Get involved</a></li>
         </ul>
-      </div>
+      </nav>
       <div>
-        <h5>Contact</h5>
+        <h2>Contact</h2>
         <ul>
           <li><a href="mailto:hello@ssbcouncil.org">hello@ssbcouncil.org</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-row">
-      <span>Sydney Schools Business Council · ssbcouncil.org</span>
+      <span>© 2026 Sydney Schools Business Council · ssbcouncil.org</span>
       <span>Student-led. Adult-governed. NSW.</span>
     </div>
   </div>
