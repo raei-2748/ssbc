@@ -1,19 +1,32 @@
 (function () {
+  // Scroll-reveal styles only apply once JS is confirmed running,
+  // so content is never hidden if this script fails to load.
+  document.documentElement.classList.add('js');
+
   // Mobile nav toggle
   var toggle = document.querySelector('.menu-toggle');
   var links = document.querySelector('nav.links');
   if (toggle && links) {
-    toggle.addEventListener('click', function () {
-      var open = links.classList.toggle('open');
+    var setOpen = function (open) {
+      links.classList.toggle('open', open);
       toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
       document.body.style.overflow = open ? 'hidden' : '';
+    };
+    toggle.addEventListener('click', function () {
+      setOpen(!links.classList.contains('open'));
     });
     links.querySelectorAll('a').forEach(function (a) {
-      a.addEventListener('click', function () {
-        links.classList.remove('open');
-        toggle.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
-      });
+      a.addEventListener('click', function () { setOpen(false); });
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && links.classList.contains('open')) {
+        setOpen(false);
+        toggle.focus();
+      }
+    });
+    window.matchMedia('(min-width: 861px)').addEventListener('change', function (mq) {
+      if (mq.matches) setOpen(false);
     });
   }
 
@@ -26,6 +39,7 @@
   }
 
   // Scroll reveal
+  var reveals = document.querySelectorAll('.reveal');
   if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window) {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
@@ -34,9 +48,9 @@
           io.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
-    document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    reveals.forEach(function (el) { io.observe(el); });
   } else {
-    document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('in-view'); });
+    reveals.forEach(function (el) { el.classList.add('in-view'); });
   }
 })();

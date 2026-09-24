@@ -2,38 +2,44 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="theme-color" content="#0F766E">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Partners &amp; Schools — Sydney Schools Business Council</title>
 <meta name="description" content="University partners, sponsorship tiers, and the member schools that make up the Sydney Schools Business Council.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/styles.css">
 </head>
 <body data-page="partners">
 
-<header>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
   <div class="wrap nav-row">
-    <a class="wordmark" href="/"><span class="mark">SSBC</span> · Sydney Schools Business Council</a>
-    <nav class="links">
+    <a class="wordmark" href="/" aria-label="SSBC, Sydney Schools Business Council, home"><span class="mark">SSBC</span><span class="full">Sydney Schools Business Council</span></a>
+    <nav class="links" id="site-nav" aria-label="Main">
       <a href="/" data-page="home">Home</a>
       <a href="/competition.html" data-page="competition">Competition</a>
       <a href="/programs.html" data-page="programs">Programs</a>
       <a href="/partners.html" data-page="partners">Partners</a>
       <a href="/get-involved.html" data-page="get-involved">Get involved</a>
-      <a class="nav-cta drawer-cta" href="/get-involved.html">Partner with us</a>
+      <a class="btn btn-primary drawer-cta" href="/get-involved.html">Partner with us</a>
     </nav>
-    <a class="nav-cta" href="/get-involved.html">Partner with us</a>
-    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+    <a class="btn btn-primary btn-sm nav-cta" href="/get-involved.html">Partner with us</a>
+    <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+      <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+      <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
     </button>
   </div>
 </header>
 
+<main id="main">
+
 <section class="page-hero">
   <div class="wrap">
-    <p class="crumb"><a href="/">Home</a> / Partners</p>
-    <p class="kicker">Backed by</p>
+    <nav class="crumb" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li aria-current="page">Partners</li></ol></nav>
+    <p class="kicker">Our partners</p>
     <h1>Backed by universities. Built by schools.</h1>
     <p class="lede">SSBC is developed with guidance and support from university partners, alongside professionals who review our case materials and judge the live final.</p>
   </div>
@@ -41,28 +47,28 @@
 
 <section>
   <div class="wrap">
-    <div class="partner-row reveal">
-      <span class="partner-name">UNSW</span>
-      <span class="partner-name">Macquarie University</span>
+    <div class="partner-row reveal" role="list" aria-label="University partners">
+      <span class="partner-name" role="listitem">UNSW</span>
+      <span class="partner-name" role="listitem">Macquarie University</span>
     </div>
     <div class="partner-support-grid reveal">
       <div class="partner-support">
-        <h4>Case development</h4>
+        <h3>Case development</h3>
         <p>University staff and postgraduate volunteers review each episode for accuracy before it reaches students.</p>
       </div>
       <div class="partner-support">
-        <h4>Judging &amp; mentoring</h4>
+        <h3>Judging &amp; mentoring</h3>
         <p>Faculty and industry professionals judge the live final and are available to mentor finalist teams beforehand.</p>
       </div>
       <div class="partner-support">
-        <h4>Venue &amp; delivery</h4>
+        <h3>Venue &amp; delivery</h3>
         <p>University campuses host the live final, giving finalists a first look at the spaces they may study in.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section>
+<section class="alt">
   <div class="wrap">
     <div class="section-head reveal">
       <h2>Partner with SSBC</h2>
@@ -114,23 +120,23 @@
       <h2>The council</h2>
       <p>SSBC is coordinated by student representatives from each member school's own business society.</p>
     </div>
-    <div class="school-grid reveal">
-      <div class="school">The King's School</div>
-      <div class="school">Sydney Grammar School</div>
-      <div class="school">Knox Grammar School</div>
-      <div class="school">Sydney Boys High School</div>
-      <div class="school">The Scots College</div>
-      <div class="school">Kambala</div>
-      <div class="school">MLC School</div>
-      <div class="school">Barker College</div>
-      <div class="school">St Catherine's School</div>
-      <div class="school">North Sydney Boys High School</div>
-      <div class="school">North Sydney Girls High School</div>
-    </div>
+    <ul class="school-grid reveal">
+      <li class="school">The King's School</li>
+      <li class="school">Sydney Grammar School</li>
+      <li class="school">Knox Grammar School</li>
+      <li class="school">Sydney Boys High School</li>
+      <li class="school">The Scots College</li>
+      <li class="school">Kambala</li>
+      <li class="school">MLC School</li>
+      <li class="school">Barker College</li>
+      <li class="school">St Catherine's School</li>
+      <li class="school">North Sydney Boys High School</li>
+      <li class="school">North Sydney Girls High School</li>
+    </ul>
   </div>
 </section>
 
-<section style="border-bottom: none;">
+<section>
   <div class="wrap">
     <div class="cta-banner reveal">
       <div>
@@ -142,37 +148,39 @@
   </div>
 </section>
 
+</main>
+
 <footer>
   <div class="wrap">
     <div class="footer-grid">
       <div>
-        <div class="wordmark" style="margin-bottom:10px;"><span class="mark">SSBC</span></div>
-        <p style="color:var(--ink-soft);font-size:0.88rem;max-width:36ch;margin:0;">Sydney Schools Business Council — student-led, adult-governed, built for NSW secondary schools.</p>
+        <a class="wordmark" href="/"><span class="mark">SSBC</span><span class="full">Sydney Schools Business Council</span></a>
+        <p class="about">Student-led, adult-governed, and built for NSW secondary schools.</p>
       </div>
-      <div>
-        <h5>Explore</h5>
+      <nav aria-label="Explore">
+        <h2>Explore</h2>
         <ul>
           <li><a href="/competition.html">Competition</a></li>
           <li><a href="/programs.html">Programs</a></li>
           <li><a href="/partners.html">Partners</a></li>
         </ul>
-      </div>
-      <div>
-        <h5>Council</h5>
+      </nav>
+      <nav aria-label="Council">
+        <h2>Council</h2>
         <ul>
           <li><a href="/partners.html#schools">Member schools</a></li>
           <li><a href="/get-involved.html">Get involved</a></li>
         </ul>
-      </div>
+      </nav>
       <div>
-        <h5>Contact</h5>
+        <h2>Contact</h2>
         <ul>
           <li><a href="mailto:hello@ssbcouncil.org">hello@ssbcouncil.org</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-row">
-      <span>Sydney Schools Business Council · ssbcouncil.org</span>
+      <span>© 2026 Sydney Schools Business Council · ssbcouncil.org</span>
       <span>Student-led. Adult-governed. NSW.</span>
     </div>
   </div>
