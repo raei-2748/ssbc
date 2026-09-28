@@ -597,3 +597,34 @@ html { scroll-padding-top: 0; }
 .enquiry-result label { margin-top: 20px; }
 @media (max-width: 900px) { .contact-layout { grid-template-columns: 1fr; } }
 @media (max-width: 540px) { .form-row { grid-template-columns: 1fr; gap: 0; } }
+
+
+/* ---------- Women in Finance ---------- */
+.women-finance-panel {
+  display: grid; grid-template-columns: 1.05fr 1fr; gap: 36px 56px;
+  padding: clamp(26px, 4vw, 48px); border: 1px solid var(--line-strong);
+  border-radius: var(--radius-lg); background: var(--paper-raised);
+}
+.women-finance-copy { min-width: 0; }
+.women-finance-copy .kicker { margin-bottom: 18px; }
+.women-finance-copy h2 { font-size: clamp(1.9rem, 3.3vw, 2.7rem); font-weight: 600; letter-spacing: -.045em; margin: 0 0 16px; }
+.women-finance-copy p { color: var(--ink-soft); font-size: .92rem; margin: 0 0 18px; }
+.women-finance-copy .women-finance-intro { color: var(--brand); font-size: clamp(1.2rem, 2vw, 1.5rem); font-weight: 500; line-height: 1.35; letter-spacing: -.02em; }
+.women-finance-copy .btn { margin-top: 8px; }
+.women-finance-aims { min-width: 0; padding-left: 36px; border-left: 1px solid var(--line); }
+.women-finance-aims .section-label { font-size: .62rem !important; margin-bottom: 8px !important; }
+.women-finance-list { list-style: none; margin: 0; padding: 0; }
+.women-finance-list li { display: grid; grid-template-columns: 32px 1fr; gap: 14px; padding: 23px 0; }
+.women-finance-list li + li { border-top: 1px solid var(--line); }
+.women-finance-number { font-size: .78rem; font-weight: 600; color: var(--brand); padding-top: 2px; }
+.women-finance-list h3 { font-size: 1rem; font-weight: 600; margin: 0 0 7px; letter-spacing: -.015em; }
+.women-finance-list p { font-size: .86rem; line-height: 1.65; color: var(--ink-soft); margin: 0; }
+.women-finance-note { grid-column: 1 / -1; margin: 0; padding-top: 20px; border-top: 1px solid var(--line); font-size: .74rem; color: var(--ink-faint); }
+@media (max-width: 860px) {
+  .women-finance-panel { grid-template-columns: 1fr; gap: 28px; }
+  .women-finance-aims { border-left: 0; padding-left: 0; border-top: 1px solid var(--line); padding-top: 24px; }
+  .women-finance-list li:last-child { padding-bottom: 0; }
+}
+@media (max-width: 540px) {
+  .women-finance-copy .btn { width: 100%; }
+}
