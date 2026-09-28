@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-AU">
 <head>
 <meta charset="UTF-8">
-<meta name="theme-color" content="#0F766E">
+<meta name="theme-color" content="#2348B5">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Get Involved — Sydney Schools Business Council</title>
 <meta name="description" content="Register your school, start a partnership, or join SSBC as a student — here's where to start.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/assets/styles.css">
 </head>
 <body data-page="get-involved">
@@ -17,13 +18,13 @@
 
 <header class="site-header">
   <div class="wrap nav-row">
-    <a class="wordmark" href="/" aria-label="SSBC, Sydney Schools Business Council, home"><span class="mark">SSBC</span><span class="full">Sydney Schools Business Council</span></a>
+    <a class="wordmark" href="/" aria-label="SSBC, Sydney Schools Business Council, home"><span class="mark">SSBC</span><span class="full">Sydney Schools<br>Business Council</span></a>
     <nav class="links" id="site-nav" aria-label="Main">
       <a href="/" data-page="home">Home</a>
       <a href="/competition.html" data-page="competition">Competition</a>
       <a href="/programs.html" data-page="programs">Programs</a>
       <a href="/partners.html" data-page="partners">Partners</a>
-      <a href="/get-involved.html" data-page="get-involved">Get involved</a>
+      <a href="/get-involved.html" data-page="get-involved" aria-current="page">Get involved</a>
       <a class="btn btn-primary drawer-cta" href="/get-involved.html">Partner with us</a>
     </nav>
     <a class="btn btn-primary btn-sm nav-cta" href="/get-involved.html">Partner with us</a>
@@ -44,11 +45,13 @@
     <p class="lede">Whether you're a teacher, a professional, or a student — here's exactly where to start and what happens next.</p>
   </div>
 </section>
+<nav class="page-index wrap" aria-label="On this page"><span>ON THIS PAGE</span><a href="#schools">Schools <span aria-hidden="true">↓</span></a><a href="#sponsors">Partners <span aria-hidden="true">↓</span></a><a href="#students">Students <span aria-hidden="true">↓</span></a><a href="#contact">Contact <span aria-hidden="true">↓</span></a></nav>
+
 
 <section>
   <div class="wrap">
     <div class="involve-grid reveal">
-      <div class="involve-card accent-teal">
+      <div id="schools" class="involve-card accent-teal">
         <div class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10 12 5l9 5-9 5-9-5Z"/><path d="M7 12v4c0 1.5 2.2 3 5 3s5-1.5 5-3v-4"/></svg></div>
         <h2>Schools</h2>
         <p>Bring your school's business, finance, or investment society into the council and register teams for the 2027 competition.</p>
@@ -59,7 +62,7 @@
         </ol>
         <a class="btn btn-ghost btn-sm" href="mailto:hello@ssbcouncil.org?subject=Registering%20our%20school">Register your school <span class="arrow" aria-hidden="true">→</span></a>
       </div>
-      <div class="involve-card accent-violet">
+      <div id="sponsors" class="involve-card accent-violet">
         <div class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m11 17 2 2a1.4 1.4 0 0 0 2-2"/><path d="m14 14 2.5 2.5a1.4 1.4 0 0 0 2-2l-3.9-3.9a2 2 0 0 0-2.8 0l-.9.9a1.4 1.4 0 0 1-2-2l2.8-2.8a3.5 3.5 0 0 1 4.3-.5l.5.3a2 2 0 0 0 1.5.2L21 6"/><path d="m21 3 1 11h-2"/><path d="M3 3 2 14l6.5 6.5a1.4 1.4 0 0 0 2-2"/><path d="M3 4h8"/></svg></div>
         <h2>Sponsors &amp; partners</h2>
         <p>Support case development, provide judges or mentors, or help fund delivery of a multi-school competition and final.</p>
@@ -70,7 +73,7 @@
         </ol>
         <a class="btn btn-ghost btn-sm" href="mailto:hello@ssbcouncil.org?subject=Partnering%20with%20SSBC">Start a partnership <span class="arrow" aria-hidden="true">→</span></a>
       </div>
-      <div class="involve-card accent-coral">
+      <div id="students" class="involve-card accent-coral">
         <div class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M5 20a7 7 0 0 1 14 0"/></svg></div>
         <h2>Students</h2>
         <p>Not part of a member society yet? Reach out — we'll connect you with your nearest school representative.</p>
@@ -85,17 +88,39 @@
   </div>
 </section>
 
-<section class="alt">
+<section id="contact" class="alt">
   <div class="wrap">
     <div class="section-head reveal">
       <h2>Reach us directly</h2>
       <p>One inbox for schools, partners, and students — we'll route your message to the right person on the council.</p>
     </div>
-    <div class="ledger-panel narrow reveal">
-      <p class="ledger-title">Contact</p>
-      <div class="ledger-row"><span class="label">Email</span><span class="value"><a href="mailto:hello@ssbcouncil.org">hello@ssbcouncil.org</a></span></div>
-      <div class="ledger-row"><span class="label">Region</span><span class="value">Sydney, NSW</span></div>
-      <div class="ledger-row"><span class="label">Response time</span><span class="value">2–3 school days</span></div>
+    <div class="contact-layout">
+      <div class="ledger-panel reveal">
+        <p class="ledger-title">The council inbox</p>
+        <div class="ledger-row"><span class="label">Email</span><span class="value"><a href="mailto:hello@ssbcouncil.org">hello@ssbcouncil.org</a></span></div>
+        <div class="ledger-row"><span class="label">Region</span><span class="value">Sydney, NSW</span></div>
+        <div class="ledger-row"><span class="label">Response time</span><span class="value">2–3 school days</span></div>
+      </div>
+      <form class="enquiry-form" id="enquiry-form" hidden>
+        <h2>Make your introduction.</h2>
+        <p>A few details help us connect you with the right person.</p>
+        <div class="form-row">
+          <div><label for="enquiry-name">Your name</label><input id="enquiry-name" name="name" autocomplete="name" maxlength="100" required></div>
+          <div><label for="enquiry-role">I'm reaching out as</label><select id="enquiry-role" name="role"><option value="school">A school representative</option><option value="partner">A sponsor or partner</option><option value="student">A student</option></select></div>
+        </div>
+        <label for="enquiry-organisation">School or organisation</label>
+        <input id="enquiry-organisation" name="organisation" autocomplete="organization" maxlength="150" required>
+        <label for="enquiry-message">What would you like to get involved in?</label>
+        <textarea id="enquiry-message" name="message" rows="4" maxlength="1500" placeholder="Tell us a little about your interest in SSBC…" required></textarea>
+        <button type="submit" class="btn btn-primary">Prepare my email <span aria-hidden="true">↗</span></button>
+        <p class="form-note">Your details stay on this page. You'll review and send the email yourself.</p>
+        <div id="enquiry-result" class="enquiry-result" hidden>
+          <p role="status">Your introduction is ready. Open your email app or copy the draft below.</p>
+          <a id="enquiry-email" class="text-link" href="mailto:hello@ssbcouncil.org">Open email draft ↗</a>
+          <label for="enquiry-draft">Your draft · to hello@ssbcouncil.org</label>
+          <textarea id="enquiry-draft" rows="7" readonly></textarea>
+        </div>
+      </form>
     </div>
   </div>
 </section>
@@ -106,7 +131,7 @@
   <div class="wrap">
     <div class="footer-grid">
       <div>
-        <a class="wordmark" href="/"><span class="mark">SSBC</span><span class="full">Sydney Schools Business Council</span></a>
+        <a class="wordmark" href="/"><span class="mark">SSBC</span><span class="full">Sydney Schools<br>Business Council</span></a>
         <p class="about">Student-led, adult-governed, and built for NSW secondary schools.</p>
       </div>
       <nav aria-label="Explore">
