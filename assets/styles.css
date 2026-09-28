@@ -1,15 +1,15 @@
 /* ==========================================================================
    SSBC — design tokens
-   A warm editorial system, royal blue, and an ice-blue competition accent.
+   A crisp editorial system, royal blue, and an ice-blue competition accent.
    Shared components support light and dark system preferences.
    ========================================================================== */
 :root {
   --ink: #202C44;
   --ink-soft: #566176;
   --ink-faint: #687184;
-  --paper: #F7F8F2;
+  --paper: #F8FAFC;
   --paper-raised: #FFFFFF;
-  --paper-sunken: #EEF0F6;
+  --paper-sunken: #EFF3F9;
   --line: rgba(27, 29, 38, 0.09);
   --line-strong: rgba(27, 29, 38, 0.18);
 
