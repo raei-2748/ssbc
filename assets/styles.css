@@ -1,21 +1,21 @@
 /* ==========================================================================
    SSBC — design tokens
-   A warm editorial system, forest green, and a lime competition accent.
+   A warm editorial system, royal blue, and an ice-blue competition accent.
    Shared components support light and dark system preferences.
    ========================================================================== */
 :root {
-  --ink: #20352B;
-  --ink-soft: #56645A;
-  --ink-faint: #68746A;
+  --ink: #202C44;
+  --ink-soft: #566176;
+  --ink-faint: #687184;
   --paper: #F7F8F2;
   --paper-raised: #FFFFFF;
-  --paper-sunken: #EDF0E7;
+  --paper-sunken: #EEF0F6;
   --line: rgba(27, 29, 38, 0.09);
   --line-strong: rgba(27, 29, 38, 0.18);
 
-  --brand: #163D30;
-  --brand-strong: #245943;
-  --brand-soft: #E6EEDC;
+  --brand: #2348B5;
+  --brand-strong: #19398F;
+  --brand-soft: #E8EEFC;
   --on-brand: #FFFFFF;
 
   /* Supporting accents: `-ink` is for text/icons, `-soft` for tinted fills */
@@ -40,7 +40,7 @@
     --ink: #F2F1EC; --ink-soft: #C3C4CC; --ink-faint: #9FA1AD;
     --paper: #111317; --paper-raised: #1A1D22; --paper-sunken: #15181C;
     --line: rgba(255, 255, 255, 0.09); --line-strong: rgba(255, 255, 255, 0.2);
-    --brand: #5EEAD4; --brand-strong: #99F6E4; --brand-soft: rgba(94, 234, 212, 0.12); --on-brand: #06302B;
+    --brand: #8AB4FF; --brand-strong: #B9D2FF; --brand-soft: rgba(138, 180, 255, 0.14); --on-brand: #10254D;
     --coral-ink: #FFA98A; --coral-soft: rgba(255, 140, 100, 0.14);
     --violet-ink: #B9AFFF; --violet-soft: rgba(156, 140, 255, 0.15);
     --amber-ink: #FFD27A; --amber-soft: rgba(255, 200, 90, 0.14);
@@ -52,7 +52,7 @@
   --ink: #F2F1EC; --ink-soft: #C3C4CC; --ink-faint: #9FA1AD;
   --paper: #111317; --paper-raised: #1A1D22; --paper-sunken: #15181C;
   --line: rgba(255, 255, 255, 0.09); --line-strong: rgba(255, 255, 255, 0.2);
-  --brand: #5EEAD4; --brand-strong: #99F6E4; --brand-soft: rgba(94, 234, 212, 0.12); --on-brand: #06302B;
+  --brand: #8AB4FF; --brand-strong: #B9D2FF; --brand-soft: rgba(138, 180, 255, 0.14); --on-brand: #10254D;
   --coral-ink: #FFA98A; --coral-soft: rgba(255, 140, 100, 0.14);
   --violet-ink: #B9AFFF; --violet-soft: rgba(156, 140, 255, 0.15);
   --amber-ink: #FFD27A; --amber-soft: rgba(255, 200, 90, 0.14);
@@ -412,7 +412,7 @@ h1.headline em { font-style: normal; color: var(--brand); }
 /* ---------- CTA banner ---------- */
 .cta-banner {
   position: relative; overflow: hidden;
-  border-radius: var(--radius-lg); background: #163D30; color: #fff;
+  border-radius: var(--radius-lg); background: #173A8A; color: #fff;
   padding: clamp(32px, 5vw, 56px);
   display: flex; justify-content: space-between; align-items: center; gap: 24px 40px; flex-wrap: wrap;
 }
@@ -423,8 +423,8 @@ h1.headline em { font-style: normal; color: var(--brand); }
 .cta-banner > * { position: relative; }
 .cta-banner h2 { color: #fff; font-weight: 800; font-size: clamp(1.5rem, 2.8vw, 2rem); margin: 0 0 8px; }
 .cta-banner p { margin: 0; color: rgba(255, 255, 255, 0.88); max-width: 48ch; }
-.cta-banner .btn-primary { background: #fff; color: #0B3D39; }
-.cta-banner .btn-primary:hover { background: #E2F3EF; box-shadow: none; }
+.cta-banner .btn-primary { background: #fff; color: #173A8A; }
+.cta-banner .btn-primary:hover { background: #E8EEFC; box-shadow: none; }
 .cta-banner :focus-visible { outline-color: #fff; }
 
 /* ---------- Footer ---------- */
@@ -453,17 +453,17 @@ h1.headline em { color: var(--brand); }
 .hero-sub { font-size: 1.04rem; line-height: 1.75; max-width: 43ch; margin-bottom: 28px; }
 .hero-footnote { color: var(--ink-faint); font-size: .72rem; line-height: 1.65; margin: 23px 0 0; }
 .hero-footnote > span { margin-right: 6px; color: var(--brand); }
-.competition-cover { display: block; min-width: 0; text-decoration: none; border-radius: 16px; overflow: hidden; background: #163D30; color: #F4F7E9; box-shadow: 0 16px 40px -24px #163D3066; transition: transform .25s ease, box-shadow .25s ease; }
-.competition-cover:hover { transform: translateY(-4px); box-shadow: 0 20px 50px -22px #163D3066; }
+.competition-cover { display: block; min-width: 0; text-decoration: none; border-radius: 16px; overflow: hidden; background: #173A8A; color: #F5F7FF; box-shadow: 0 16px 40px -24px #173A8A66; transition: transform .25s ease, box-shadow .25s ease; }
+.competition-cover:hover { transform: translateY(-4px); box-shadow: 0 20px 50px -22px #173A8A66; }
 .competition-cover:focus-visible { outline-offset: 6px; }
 .cover-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 18px 28px; border-bottom: 1px solid #ffffff26; font-size: .63rem; font-weight: 700; letter-spacing: .13em; }
 .cover-arrow { font-size: 1.4rem; line-height: 1; }
 .cover-body { position: relative; overflow: hidden; padding: 28px 32px 0; }
-.cover-edition { color: #D4EA88; font-size: .8rem; font-weight: 600; margin: 0 0 12px; letter-spacing: .09em; }
-.cover-body h2 { position: relative; z-index: 1; color: #F4F7E9; font-size: clamp(2rem, 3.3vw, 3rem); line-height: 1.12; letter-spacing: -.045em; font-weight: 500; margin: 0 0 14px; }
-.cover-body > p:not(.cover-edition) { font-size: .82rem; color: #C5D5C8; line-height: 1.6; margin: 0; }
+.cover-edition { color: #BED7FF; font-size: .8rem; font-weight: 600; margin: 0 0 12px; letter-spacing: .09em; }
+.cover-body h2 { position: relative; z-index: 1; color: #F5F7FF; font-size: clamp(2rem, 3.3vw, 3rem); line-height: 1.12; letter-spacing: -.045em; font-weight: 500; margin: 0 0 14px; }
+.cover-body > p:not(.cover-edition) { font-size: .82rem; color: #D3DFFA; line-height: 1.6; margin: 0; }
 .cover-art { width: calc(100% + 64px); max-width: none; margin: -8px -32px 0; height: auto; }
-.cover-bottom { display: flex; align-items: center; gap: 28px; padding: 20px 28px; background: #D4EA88; color: #163D30; }
+.cover-bottom { display: flex; align-items: center; gap: 28px; padding: 20px 28px; background: #BED7FF; color: #2348B5; }
 .cover-bottom > div { display: grid; gap: 4px; }
 .cover-bottom span:not(.cover-seal) { font-size: .58rem; letter-spacing: .09em; font-weight: 700; }
 .cover-bottom strong { font-size: .84rem; font-weight: 700; }
@@ -495,12 +495,12 @@ body[data-page="home"] .program .icon-circle { background: var(--paper-raised); 
 .partner-name::before { width: 8px; height: 24px; border-radius: 1px; }
 .partner-note { font-size: .9rem; }
 .cta-banner { border-radius: 14px; padding: clamp(28px, 5vw, 56px); }
-.cta-banner::before { background: none; border: 1px solid #D4EA8833; top: -120px; right: -150px; }
-.banner-label { color: #D4EA88 !important; font-size: .65rem; letter-spacing: .12em; font-weight: 700; margin-bottom: 18px !important; }
+.cta-banner::before { background: none; border: 1px solid #BED7FF33; top: -120px; right: -150px; }
+.banner-label { color: #BED7FF !important; font-size: .65rem; letter-spacing: .12em; font-weight: 700; margin-bottom: 18px !important; }
 .cta-banner h2 { font-weight: 500; font-size: clamp(1.8rem, 3vw, 2.7rem); line-height: 1.15; letter-spacing: -.04em; margin-bottom: 16px; }
 .cta-banner p { font-size: .9rem; }
-.cta-banner .btn-primary { background: #D4EA88; color: #163D30; }
-.cta-banner .btn-primary:hover { background: #E5F2B8; }
+.cta-banner .btn-primary { background: #BED7FF; color: #2348B5; }
+.cta-banner .btn-primary:hover { background: #DCE9FF; }
 .page-hero { border-bottom: 1px solid var(--line); }
 .page-hero h1 { font-weight: 600; font-size: clamp(2.3rem, 4.7vw, 3.8rem); letter-spacing: -.05em; max-width: 20ch; }
 .page-hero .lede { font-size: 1.02rem; }
